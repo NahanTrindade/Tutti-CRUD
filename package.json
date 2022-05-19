@@ -1,0 +1,26 @@
+{
+  "name": "tutti-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon -r esm index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NahanTrindade/Tutti-CRUD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NahanTrindade/Tutti-CRUD/issues"
+  },
+  "homepage": "https://github.com/NahanTrindade/Tutti-CRUD#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "morgan": "^1.10.0"
+  }
+}
