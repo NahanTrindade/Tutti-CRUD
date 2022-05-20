@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "tutti",
+    "password": "senha123",
+    "database": "tutti",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

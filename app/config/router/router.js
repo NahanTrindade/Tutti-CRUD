@@ -4,6 +4,5 @@ const router = express.Router();
 
 //MainController
 router.get("/", maincontroller.index);
-router.get("/about", maincontroller.about);
 
 export default router;
