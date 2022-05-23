@@ -1,0 +1,39 @@
+<div class="container">
+
+    <h1>{{setor}} </h1>
+
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th colspan="2">Setor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each colaboradores}}
+            <tr>
+                <td>{{nome}}</td>
+                <td>{{cpf}}</td>
+                <td>{{setor}}</td>
+                <td>
+                    <a href="/update/{{id}}"><img class="icone" src="/img/edit.svg" alt="update" width="18px"></a>
+                    <a id="btn-remover-{{id}}"><img class="icone" src="/img/delete.svg" alt="delete" width="18px"></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+
+    {{#each colaboradores}}
+    const btn_remover_{{ id }} = document.getElementById("btn-remover-{{id}}");
+    
+    btn_remover_{{id}}.addEventListener('click', () => {
+        apagar({{ id }});
+    })
+    {{/each}}
+</script>

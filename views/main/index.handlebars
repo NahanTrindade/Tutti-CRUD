@@ -1,1 +1,61 @@
-<h1>Home</h1>
+<div class="container">
+
+    <h1>Colaboradores <a href="/create"><img class="icone" src="img/create.svg" alt="create" width="24px"></a> </h1>
+
+    <div class="tabela-setores">
+
+    <button id="filtro" class="button">Filtrar por setor</button>
+        <table class="tabela" id="tbl-setor">
+            {{#each setores}}
+            <tr>
+                <td><a href="/listar/{{setor}}">{{setor}}</a></td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th colspan="2">Setor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each colaboradores}}
+            <tr>
+                <td>{{nome}}</td>
+                <td>{{cpf}}</td>
+                <td>{{setor}}</td>
+                <td>
+                    <a href="/update/{{id}}"><img class="icone" src="img/edit.svg" alt="update" width="18px"></a>
+                    <a id="btn-remover-{{id}}"><img class="icone" src="img/delete.svg" alt="delete" width="18px"></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+
+    const btn_filtro = document.getElementById('filtro');
+    const setores = document.getElementById("tbl-setor"); 
+    btn_filtro.addEventListener('click', ()=>{
+        if(setores.style.display == 'block'){
+            setores.style.display = 'none';
+        }else{
+            setores.style.display = 'block';
+        }
+    })
+
+    {{#each colaboradores}}
+    const btn_remover_{{id}} = document.getElementById("btn-remover-{{id}}");
+    
+    btn_remover_{{id}}.addEventListener('click', () => {
+        apagar({{id}});
+    })
+    {{/each}}
+</script>

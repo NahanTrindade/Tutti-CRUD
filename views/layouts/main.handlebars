@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,19 @@
     <link rel="stylesheet" href="/css/main.css">
     <title>Tutti CRUD</title>
 </head>
+
 <body>
+    {{#if isLogged}}
     {{{body}}}
+    {{else}}
+    <div class="login container">
+        <h1>Sua sessão irá durar 30 minutos</h1>
+        <a href="/init"><button class="button">Iniciar Sessão</button></a>
+    </div>
+    {{/if}}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
+
 </html>
